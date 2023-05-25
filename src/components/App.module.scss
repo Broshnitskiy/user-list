@@ -1,7 +1,13 @@
 .title {
-    text-align: center;
+  text-align: center;
 }
 
-.addBtn{
-text-align: center;
+.addBtn {
+  text-align: center;
+}
+
+.paginationWrapper {
+  >ul{
+    justify-content: center;
+  }
 }

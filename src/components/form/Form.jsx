@@ -3,11 +3,13 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 export const FormComponent = ({ onSubmitUser, user }) => {
-  const [firstName, setFirstName] = useState(user ? user.firstName : '');
-  const [lastName, setLastName] = useState(user ? user.lastName : '');
-  const [number, setNumber] = useState(user ? user.number : '');
-  const [email, setEmail] = useState(user ? user.email : '');
-  const [date, setDate] = useState(user ? user.date : '');
+  const [firstName, setFirstName] = useState(
+    user?.firstName ? user.firstName : ''
+  );
+  const [lastName, setLastName] = useState(user?.lastName ? user.lastName : '');
+  const [number, setNumber] = useState(user?.number ? user.number : '');
+  const [email, setEmail] = useState(user?.email ? user.email : '');
+  const [date, setDate] = useState(user?.date ? user.date : '');
 
   const resetInput = () => {
     setFirstName('');
