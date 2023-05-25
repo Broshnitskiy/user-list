@@ -90,7 +90,7 @@ export const FormComponent = ({ onSubmitUser, user }) => {
           value={number}
           onChange={handleChange}
           placeholder="+380999999999"
-          pattern="^\+380\d{9}$"
+          pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           title="Phone number must be +380(XX)XXX-XX-XX)"
           required
         />
