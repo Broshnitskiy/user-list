@@ -22,16 +22,16 @@ export const FormComponent = ({ onSubmitUser, user }) => {
   const handleChange = e => {
     switch (e.target.name) {
       case 'firstName':
-        setFirstName(e.target.value);
+        setFirstName(e.target.value.trim());
         break;
       case 'lastName':
-        setLastName(e.target.value);
+        setLastName(e.target.value.trim());
         break;
       case 'number':
         setNumber(e.target.value);
         break;
       case 'email':
-        setEmail(e.target.value.toLocaleLowerCase());
+        setEmail(e.target.value.toLocaleLowerCase().trim());
         break;
       case 'date':
         setDate(e.target.value);
@@ -87,13 +87,13 @@ export const FormComponent = ({ onSubmitUser, user }) => {
       <Form.Group className="mb-3" controlId="formNumber">
         <Form.Label>Phone number</Form.Label>
         <Form.Control
-          type="number"
+          type="text"
           name="number"
           value={number}
           onChange={handleChange}
           placeholder="+380999999999"
-          pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-          title="Phone number must be +380(XX)XXX-XX-XX)"
+          pattern="\+380\d{9}"
+          title="Phone number must be +380(XX)XXX-XX-XX"
           required
         />
       </Form.Group>
